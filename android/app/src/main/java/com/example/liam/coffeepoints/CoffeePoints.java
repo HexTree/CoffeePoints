@@ -7,19 +7,48 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class CoffeePoints extends Activity {
 
+    ImageButton Points, Redeem, Coffee, Help;
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
+    static final int SCAN_REQUEST = 0;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_coffee_points, menu);
+        return true;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //set the main content layout of the Activity
         setContentView(R.layout.activity_coffee_points);
+
+        GridView grid = (GridView) findViewById(R.id.gridView1);
+        grid.setAdapter(new MenuAdapter(this));
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position,
+                                    long id) {
+                switch(position) {
+                    case 0: scanQR(v); // Specify activity through Intent i
+                }
+            }
+        });
     }
+
+
+    // SCANNING FUNCTIONS
 
     //product qr code mode
     public void scanQR(View v) {
@@ -27,7 +56,7 @@ public class CoffeePoints extends Activity {
             //start the scanning activity from the com.google.zxing.client.android.SCAN intent
             Intent intent = new Intent(ACTION_SCAN);
             intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-            startActivityForResult(intent, 0);
+            startActivityForResult(intent, SCAN_REQUEST);
         } catch (ActivityNotFoundException anfe) {
             //on catch, show the download dialog
             showDialog(CoffeePoints.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
@@ -59,7 +88,7 @@ public class CoffeePoints extends Activity {
 
     //on ActivityResult method
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-        if (requestCode == 0) {
+        if (requestCode == SCAN_REQUEST) {
             if (resultCode == RESULT_OK) {
                 //get the extras that are returned from the intent
                 String contents = intent.getStringExtra("SCAN_RESULT");
