@@ -9,3 +9,7 @@ If the customer opts out of using a disposable cup, the cashier will show a badg
 Test QR code: 
 
 ![alt tag](https://cloud.githubusercontent.com/assets/7933725/12876131/85df0ad4-ce0b-11e5-9a9e-9c9845747f73.png)
+
+This is developed using Cordova. To test or modify, please install according to instructions at http://cordova.apache.org/docs/en/4.0.0/guide/cli/index.html#add-plugin-features
+
+Cordova is able to export to both Android and iOS, which makes it an ideal cross-platform tool for our purposes.
