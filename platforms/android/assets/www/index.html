@@ -5,27 +5,16 @@
 		<title>CoffeePoints</title>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript">
-			function scan()
-			{
-				console.log("clicked");
-				cordova.plugins.barcodeScanner.scan
-				(
-					function(result)
-					{
-						//success callback
-						alert(JSON.stringify(result));
-					}
-					function(error)
-					{
-						//error callback
-						alert(JSON.stringify(error));	
-					}
-				);	
-			}
+
 		</script>
 	</head>
 	<body>
 		<h3>CoffeePoints</h3>
-		<button onclick="scan()">SCAN</button>
+		<form method="get" action="auth.html">
+    	<button type="submit">Log In</button>
+		</form>
+		<form method="get" action="scan.html">
+    	<button type="submit">Scan</button>
+		</form>
 	</body>
 </html>
