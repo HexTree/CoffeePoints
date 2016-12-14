@@ -3,18 +3,72 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>CoffeePoints</title>
+
+		<!--jQuery Scripts
+			Necessary for local storage.
+		-->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<!--Google API Scripts
+			Necessary for Google Auth.
+		-->
+		<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="571966363873-b28h83u3eifcetaubc4eld6lq6b02m7l.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://apis.google.con/js/api.js"></script>
+
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript">
+			if(localStorage.getItem("LocalData") == null)
+			{
+					var data = [];
+					data = JSON.stringify(data);
+					localStorage.setItem("LocalData", data);
+			}
+			gapi.load('auth2',
+				function(){
+					gapi.auth2.init();
+				}
+			);
+			function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+				// profile.getName() profile.getEmail() profile.getImageUrl()
 
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+      };
+			function scan()
+			{
+				console.log("clicked");
+				cordova.plugins.barcodeScanner.scan(
+					function(result)
+					{
+						//success callback
+						alert(JSON.stringify(result));
+					}
+					function(error)
+					{
+						//error callback
+						alert(JSON.stringify(error));
+					}
+				);
+			}
 		</script>
 	</head>
 	<body>
-		<h3>CoffeePoints</h3>
-		<form method="get" action="auth.html">
-    	<button type="submit">Log In</button>
-		</form>
-		<form method="get" action="scan.html">
-    	<button type="submit">Scan</button>
-		</form>
+		<div class="app">
+			<div data-role="header" align="center">
+				<h1>CoffeePoints</h1>
+			</div>
+			<div data-role="page" align="center" id="home">
+				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light">
+				</div>
+				<form method="get" action="scan.html">
+		    	<button type="submit">Scan</button>
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
