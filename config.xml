@@ -2,14 +2,18 @@
 <widget id="com.example.coffeepoints" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CoffeePoints</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        An app that is part of a movement to promote sustainabilty at KAUST.
+        This app is part of a challenge and is designed for KAUST Resedents only.
+        It let's you collect sustainability points by scanning a specific barcode.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="greengroup@kaust.edu.sa" href="https://www.facebook.com/KAUSTGreenGroup/?fref=ts">
+        KAUST Green Group
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <access origin="*" />
+    <access origin="https://*.google.com/*"/>
+    <access origin="https://apis.google.con/js/api.js"/>
+    <allow-navigation href="https://*.google.com/*"/>
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -17,10 +21,16 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
+        <access origin="https://*.google.com/*" launch-external="yes"/>
+        <allow-intent href="https://*.google.com/*"/>
+        <allow-navigation href="https://*.google.com/*"/>
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <access origin="https://*.google.com/*"/>
+        <allow-intent href="https://*.google.com/*"/>
+        <allow-navigation href="https://*.google.com/*"/>
         <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
+        <allow-intent href="itms-apps:*"/>
     </platform>
 </widget>

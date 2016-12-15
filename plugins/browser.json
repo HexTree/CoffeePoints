@@ -7,11 +7,11 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.example.coffeepoints"
-        },
         "phonegap-plugin-barcodescanner": {
             "CAMERA_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.example.coffeepoints"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.example.coffeepoints"
         }
     },

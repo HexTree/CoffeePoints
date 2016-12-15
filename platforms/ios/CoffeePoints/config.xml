@@ -20,19 +20,24 @@
     </feature>
     <name>CoffeePoints</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        An app that is part of a movement to promote sustainabilty at KAUST.
+        This app is part of a challenge and is designed for KAUST Resedents only.
+        It let's you collect sustainability points by scanning a specific barcode.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="greengroup@kaust.edu.sa" href="https://www.facebook.com/KAUSTGreenGroup/?fref=ts">
+        KAUST Green Group
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="https://apis.google.con/js/api.js" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <access origin="https://*.google.com/*" />
+    <allow-intent href="https://*.google.com/*" />
+    <allow-navigation href="https://*.google.com/*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />

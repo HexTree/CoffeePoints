@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+		<title>Coffee Points</title>
+
+		<!--jQuery Scripts
+			Necessary for local storage.
+		-->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+      if(localStorage.getItem("LocalData") == null)
+      {
+          var data = [];
+          data = JSON.stringify(data);
+          localStorage.setItem("LocalData", data);
+      }
+
+      // Scan function
+      function scan()
+      {
+        console.log("clicked");
+        cordova.plugins.barcodeScanner.scan(
+          function(result)
+          {
+            //success callback
+            alert(JSON.stringify(result));
+          }
+          function(error)
+          {
+            //error callback
+            alert(JSON.stringify(error));
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div class="app" align="center">
+      <!--Header-->
+      <h1>Coffee Points</h1>
+      <button class="button" onclick="scan()">Scan</button>
+    </div>
+  </body>
+</html>

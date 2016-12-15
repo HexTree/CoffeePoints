@@ -2,30 +2,57 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>CoffeePoints</title>
+		<!--Google API Scripts
+			Necessary for Google Auth.
+		-->
+		<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="571966363873-b28h83u3eifcetaubc4eld6lq6b02m7l.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://apis.google.con/js/api.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<title>Coffee Points</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
-			function scan()
+			if(localStorage.getItem("LocalData") == null)
 			{
-				console.log("clicked");
-				cordova.plugins.barcodeScanner.scan
-				(
-					function(result)
-					{
-						//success callback
-						alert(JSON.stringify(result));
-					}
-					function(error)
-					{
-						//error callback
-						alert(JSON.stringify(error));	
-					}
-				);	
+					var data = [];
+					data = JSON.stringify(data);
+					localStorage.setItem("LocalData", data);
 			}
 		</script>
 	</head>
 	<body>
-		<h3>CoffeePoints</h3>
-		<button onclick="scan()">SCAN</button>
+		<div class="app" align="center">
+			<!--Header-->
+			<h1>Coffee Points</h1>
+			<div id="my-signin2"></div>
+			<form action="scan.html">
+				<button class="button" type="submit">Scan</button>
+			</form>
+		</div>
+		<script>
+				function onSuccess(googleUser) {
+		      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+		    }
+		    function onFailure(error) {
+		      console.log(error);
+		    }
+				function renderButton() {
+					gapi.signin2.render('my-signin2', {
+						'scope': 'profile email',
+						'width': 240,
+						'height': 50,
+						'theme': 'light',
+						'onsuccess': onSuccess,
+						'onfailure': onFailure
+					});
+				}
+		</script>
+		<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 	</body>
 </html>
