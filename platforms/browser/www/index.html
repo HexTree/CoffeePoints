@@ -5,10 +5,30 @@
 		<title>CoffeePoints</title>
 
 		<!--jQuery Scripts
-			Necessary for local storage.
+			Necessary for
+				- local storage.
+				- hide and show content.
 		-->
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			//test function
+			function click(){
+				document.getElementByID("par").innetHTML = "Clicked";
+				console.log("clicked");
+			}
+
+			$(document).ready(function(){
+				$("btn").click(function(){
+					click();
+				});
+			});
+
+			if(1==1){
+				console.log("ajax scripts work");
+			}
+		</script>
 
 		<!--Google API Scripts
 			Necessary for Google Auth.
@@ -18,7 +38,9 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 		<script src="https://apis.google.con/js/api.js"></script>
 
+		<!--JavaScript Scripts-->
 		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 		<script type="text/javascript">
 			if(localStorage.getItem("LocalData") == null)
 			{
@@ -67,9 +89,13 @@
 					}
 				);
 			}
+
+			if(1==1){
+				console.log("javascript scripts work");
+			}
 		</script>
 	</head>
-	<body>
+	<body onload="init();">
 		<div class="app">
 			<!--Header-->
 			<div data-role="header" align="center">
@@ -81,22 +107,17 @@
 				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light"></div>
 			</div>
 
-			<!--Footer
+			<!--Footer-->
 			<div data-role="footer" align="center">
-				<button href="#" onclick="signOut()">Sign out</button>
-			</div>-->
+				<form>
+					<input type="button" class="g-signout2" href="#" value="Sign out" onclick="signOut()"/>
+				</form>
+			</div>
 		</div>
 
 		<!--Testing Click-->
-		<button class="btn" onclick="click()">Scan</button>
+		<button class="btn">Scan</button>
 		<p id="par"></p>
 
-		<script>
-			//test function
-			function click(){
-				document.getElementByID("par").innetHTML = "Clicked";
-				console.log("clicked");
-			}
-		</script>
 	</body>
 </html>
