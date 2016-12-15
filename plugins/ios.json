@@ -11,8 +11,13 @@
             "PACKAGE_NAME": "com.example.coffeepoints"
         },
         "phonegap-plugin-barcodescanner": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.example.coffeepoints"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.coffeepoints"
+        }
+    }
 }
