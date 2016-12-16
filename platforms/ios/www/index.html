@@ -2,13 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+
+		<!--The following meta data is necessary but it blocks google sign-in. Requires fix-->
+
 		<!--Google API Scripts
 			Necessary for Google Auth.
 		-->
 		<meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="571966363873-b28h83u3eifcetaubc4eld6lq6b02m7l.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script src="https://apis.google.con/js/api.js"></script>
+		<script src="https://apis.google.com/js/api.js"></script>
 
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<title>Coffee Points</title>
@@ -27,7 +30,7 @@
 		</script>
 	</head>
 	<body>
-		<div class="app" align="center">
+		<div class="app">
 			<!--Header-->
 			<h1>Coffee Points</h1>
 			<div id="my-signin2"></div>
