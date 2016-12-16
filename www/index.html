@@ -3,8 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 
-		<!--The following meta data is necessary but it blocks google sign-in. Requires fix-->
-
+		<!--The following meta data is necessary but it blocks google sign-in. Requires fix
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com: google.com;
+																												style-src 'self' 'unsafe-inline' google.com;
+																												frame-src 'self' google.com;
+																												script-src 'self' google.com;
+																												media-src *">-->
 		<!--Google API Scripts
 			Necessary for Google Auth.
 		-->
