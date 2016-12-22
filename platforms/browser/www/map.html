@@ -15,6 +15,20 @@
 					body { opacity: 0; }
 				</style>
 
+				<style>
+		      /* Always set the map height explicitly to define the size of the div
+		       * element that contains the map. */
+		      #map {
+		        width: 100%;
+		      }
+		      /* Optional: Makes the sample page fill the window. */
+		      html, body {
+		        width: 100%;
+		        margin: 0;
+		        padding: 0;
+		      }
+		    </style>
+
 	</head>
 	<body>
 
@@ -29,12 +43,34 @@
 
 			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
 
-				A map that shows you the locations where you can fill up your water bottle, reuse your own mug for coffee and reuse your bags for goods.
+				<p>A map that shows you the locations where you can fill up your water bottle, reuse your own mug for coffee and reuse your bags for goods.</p>
+
+				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1RAwyZu8hiB0NbdIn8WcbpIcrYHM" width="100%" height="300px"></iframe>
+
+				<div id="map"></div>
 
 			</div>
 
 		</div>
 
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: new google.maps.LatLng(2.8,-187.3),
+          mapTypeId: 'terrain'
+        });
+
+        var script = document.createElement('script');
+        script.src = 'https://www.google.com/maps/d/u/0/embed?mid=1RAwyZu8hiB0NbdIn8WcbpIcrYHM';
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY8mEmcwuLYnmGmG7q_jzq797Hhc4kVxs&callback=initMap">
+    </script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
