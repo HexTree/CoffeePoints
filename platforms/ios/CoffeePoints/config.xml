@@ -18,6 +18,9 @@
     <feature name="BarcodeScanner">
         <param name="ios-package" value="CDVBarcodeScanner" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <name>CoffeePoints</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
