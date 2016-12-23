@@ -54,7 +54,5 @@
     </dict>
     <key>NSCameraUsageDescription</key>
     <string/>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string/>
   </dict>
 </plist>
