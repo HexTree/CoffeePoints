@@ -30,7 +30,7 @@
 						if(!result.cancelled){
 							if(result.format == "QR_CODE"){
 								var value = result.text;
-
+                //parse the value into [(timestamp,location,type)]
 								var data = localStorage.getItem("localData");
 								console.log(data);
 								data = JSON.parse(data);
@@ -39,6 +39,7 @@
 								localStorage.setItem("LocalData", JSON.stringify(data));
 								//success callback
 								alert(result.text);
+                window.location.href = 'summary.html';
 							}
 						}
 					},

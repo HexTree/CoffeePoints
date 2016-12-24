@@ -90,7 +90,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		FBLcRzaIFhGPOnVY3vLz5jb9TBQ=
+		UkzA8N/HlJIe+GgW6tBSWkrnRgE=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		xlOg7XQYauTDX0xjmAwhUDKVpuI=
+		HAS81ZweB1Jng4LQ2HyZUuKYURg=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -162,7 +162,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		upkgYQkUxtxAjYeMEN5RrGdMZo0=
+		bamHGUXQ7Jzg4vsDLjiUxFA11EI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>scannerOverlay.nib</key>
 		<data>
-		tz92OerIBSl5CaA7QKxWUIkloPU=
+		hcmo+e10rml4pb4XhJHJDkT16dY=
 		</data>
 		<key>www/bower.json</key>
 		<data>
@@ -526,7 +526,11 @@
 		</data>
 		<key>www/scan.html</key>
 		<data>
-		Bq3/NqYrHNGxRuATr+qBCzqoIS0=
+		7yrjK4oRGighX1n6eFPIIIi+L0I=
+		</data>
+		<key>www/summary.html</key>
+		<data>
+		NMt7VBzn8dgNjIG6NZU/v3vAjp8=
 		</data>
 		<key>www/vendor/chartist/chartist.min.js</key>
 		<data>
@@ -798,11 +802,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FBLcRzaIFhGPOnVY3vLz5jb9TBQ=
+			UkzA8N/HlJIe+GgW6tBSWkrnRgE=
 			</data>
 			<key>hash2</key>
 			<data>
-			znCubAnl9LI85G7/Q6r0wC/IcBmneIFGJDo/QaPC+hg=
+			7xzeAX8BXu2HVnO2o2U/QA6zfNS0g+XNHxiKQ/CEIg8=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -820,11 +824,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xlOg7XQYauTDX0xjmAwhUDKVpuI=
+			HAS81ZweB1Jng4LQ2HyZUuKYURg=
 			</data>
 			<key>hash2</key>
 			<data>
-			SbrI4VEyytEFndCuVDdhXRau09w9MQpWJBO/+Mv3Q7w=
+			MvFepUd/2PHjbBwC63i6yiNrmRU5sgIkCreFoNzqtgg=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -985,11 +989,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			upkgYQkUxtxAjYeMEN5RrGdMZo0=
+			bamHGUXQ7Jzg4vsDLjiUxFA11EI=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Wd/YXVA9JFLZ7H1Cd09mb0Tsw2el88PJ2zMwTe+OVI=
+			v9hbtezrlWRVZW2K5Yzgai6l+a23F5aXsIa6I2s6odc=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -1029,11 +1033,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tz92OerIBSl5CaA7QKxWUIkloPU=
+			hcmo+e10rml4pb4XhJHJDkT16dY=
 			</data>
 			<key>hash2</key>
 			<data>
-			0KU5oUZ8UcH/sOCUra4BZ7+YivmZJhoGCH2WhiFOnMM=
+			kErJU58crAySpQdi+K/+sOHF8pgNdipJTI8BIqmN1EU=
 			</data>
 		</dict>
 		<key>www/bower.json</key>
@@ -1975,11 +1979,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bq3/NqYrHNGxRuATr+qBCzqoIS0=
+			7yrjK4oRGighX1n6eFPIIIi+L0I=
 			</data>
 			<key>hash2</key>
 			<data>
-			MZ46Qx/B8RTu4DNqb0jkFsT/DUXuO5fdM5AGdGLQMTQ=
+			LWHMF86mmclOLQZQopRuBqzGv2T3cZmDYAg+DaB75GE=
+			</data>
+		</dict>
+		<key>www/summary.html</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NMt7VBzn8dgNjIG6NZU/v3vAjp8=
+			</data>
+			<key>hash2</key>
+			<data>
+			B3u3vj9ccHQEZkdZsU11/6i6h/MnC0kVXIV7oLicG7g=
 			</data>
 		</dict>
 		<key>www/vendor/chartist/chartist.min.js</key>

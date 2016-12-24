@@ -30,15 +30,15 @@
 						if(!result.cancelled){
 							if(result.format == "QR_CODE"){
 								var value = result.text;
-
+                //parse the value into [(timestamp,location,type)]
 								var data = localStorage.getItem("localData");
 								console.log(data);
 								data = JSON.parse(data);
-								data[data.length] = [value];
-
-								localStorage.setItem("LocalData", JSON.stringify(data));
+								data[data.length] = value;
 								//success callback
-								alert(result.text);
+								if(localStorage.setItem("LocalData", JSON.stringify(data))){
+                  window.location.href = 'summary.html';
+                }
 							}
 						}
 					},
