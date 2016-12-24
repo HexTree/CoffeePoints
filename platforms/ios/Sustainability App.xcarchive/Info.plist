@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationProperties</key>
+	<dict>
+		<key>ApplicationPath</key>
+		<string>Applications/Sustainability App.app</string>
+		<key>CFBundleIdentifier</key>
+		<string>com.kaustgreengroup.sustainabilityapp</string>
+		<key>CFBundleShortVersionString</key>
+		<string>1.0.0</string>
+		<key>CFBundleVersion</key>
+		<string>1.0.0</string>
+		<key>SigningIdentity</key>
+		<string>iPhone Developer: m.k.alsayyari@gmail.com (8YRQW84KAW)</string>
+	</dict>
+	<key>ArchiveVersion</key>
+	<integer>2</integer>
+	<key>CreationDate</key>
+	<date>2016-12-24T10:34:10Z</date>
+	<key>Name</key>
+	<string>Sustainability App</string>
+	<key>SchemeName</key>
+	<string>Sustainability App</string>
+</dict>
+</plist>

@@ -13,6 +13,9 @@
         "phonegap-plugin-barcodescanner": {
             "CAMERA_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.example.coffeepoints"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.example.coffeepoints"
         }
     },
     "dependent_plugins": {
