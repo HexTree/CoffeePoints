@@ -22,8 +22,8 @@
 	</head>
 	<body>
 
-		<!-- Refer to the script for changes -->
-		<div id="panel"></div>
+		<!-- Should be based on status, not default! -->
+		<nd2-include data-src="fragments/inpanel.html"></nd2-include>
 
     <div data-role="header" data-position="fixed" class="wow fadeIn">
         <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
@@ -33,7 +33,7 @@
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
 
         <p>
-          Information
+          About
 				</p>
 		</div>
 		<div data-role="footer" data-position="fixed">
@@ -41,7 +41,6 @@
             KAUST Green Group
         </div>
     </div>
-		<script src="js/loggedin.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
