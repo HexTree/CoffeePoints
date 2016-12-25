@@ -34,11 +34,11 @@
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
 
         <p>
-          Summary of scan
-          <div id='data'></div>
+          <h3 align="center">Summary of scan</h3>
+          <p id='data'></p>
 				</p>
         <p>
-          <a target="_blank" href="scan.html" style="text-decoration: none"><button class="button">Scan More</button></a>
+          <a target="_self" href="scan.html" style="text-decoration: none"><button class="button">Scan More</button></a>
         </p>
 		</div>
 		<div data-role="footer" data-position="fixed">
@@ -47,8 +47,9 @@
         </div>
     </div>
     <script>
+      //Change data to read exactly the last scan
       var data = localStorage.getItem("LocalData");
-      $('.data').html(data);
+      document.getElementById('data').innerHTML = data;
     </script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
