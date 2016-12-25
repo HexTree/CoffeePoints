@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.coffeepoints" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CoffeePoints</name>
+<widget id="com.kaustgreengroup.sustainabilityapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Sustainability App</name>
     <description>
         An app that is part of a movement to promote sustainabilty at KAUST.
         This app is part of a challenge and is designed for KAUST Resedents only.
@@ -14,23 +14,33 @@
     <access origin="https://*.google.com/*"/>
     <access origin="https://apis.google.con/js/api.js"/>
     <allow-navigation href="https://*.google.com/*"/>
+    <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-intent href="*" />
+    <access origin="*" />
     <platform name="android">
         <access origin="https://*.google.com/*" launch-external="yes"/>
         <allow-intent href="https://*.google.com/*"/>
         <allow-navigation href="https://*.google.com/*"/>
         <allow-intent href="market:*" />
+        <allow-navigation href="*" />
+        <allow-intent href="*" />
+        <access origin="*" />
     </platform>
     <platform name="ios">
-        <access origin="https://*.google.com/*"/>
-        <allow-intent href="https://*.google.com/*"/>
-        <allow-navigation href="https://*.google.com/*"/>
+        <allow-navigation href="*" />
         <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*"/>
+        <allow-intent href="itms-apps:*" />
+        <allow-intent href="*" />
+        <access origin="*" />
     </platform>
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="~6.0.2" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.1" />
 </widget>

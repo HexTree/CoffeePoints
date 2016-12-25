@@ -48,10 +48,18 @@ body {
 /* Portrait layout (default) */
 .app {
     position:absolute;             /* position in the center of the screen */
+<<<<<<< HEAD
     height:50px;                   /* text area height */
     width:device-width;                   /* text area width */
     text-align:center;
     padding: 50px;
+=======
+    left: 8%;
+    top:15%;
+    height:50px;                   /* text area height */
+    width:auto;                   /* text area width */
+    text-align:center;
+>>>>>>> master
 }
 
 
@@ -101,8 +109,8 @@ h1 {
 }
 
 .button {
-  font-size:24px;
-  font-weight: bolder;
-  margin:auto;
+  font-size: 24px;
   text-align: center;
+  margin: auto;
+  width: 200px;
 }
