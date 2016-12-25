@@ -48,8 +48,8 @@ body {
 /* Portrait layout (default) */
 .app {
     position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
+    left: 8%;
+    top:15%;
     height:50px;                   /* text area height */
     width:auto;                   /* text area width */
     text-align:center;
