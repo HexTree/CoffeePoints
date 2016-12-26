@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="vendor/waves/waves.min.css" />
     <link rel="stylesheet" href="vendor/wow/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
-
     <style>
         /* Prevent FOUC */
         body { opacity: 0; }
@@ -37,22 +36,10 @@
 	<body>
 		<div role="main" align="center" class="app" data-inset="false" data-wow-delay="0.2s">
 				<h3>Sustainability App</h3>
-				<table>
-					<tr>
-						<td>
-							<!-- To be replaced with providor's button -->
-							<div id="my-signin2"></div>
-						</td>
-						<td>
-							<!-- To be replaced with providor's button -->
-							<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>
-						</td>
-					</tr>
-				</table>
 				<p>
 					<!-- To be replaced with providor's button -->
-          <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Example</button></a>
-					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Example</button></a>
+					<div id="my-signin2"></div>
+					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>
         </p>
 				<p>
           <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Skip</button></a>
@@ -73,7 +60,7 @@
 				function renderButton() {
 					gapi.signin2.render('my-signin2', {
 						'scope': 'profile email',
-						'width': 120,
+						'width': 240,
 						'height': 50,
 						'theme': 'light',
 						'onsuccess': onSuccess,
