@@ -54,7 +54,7 @@
         </div>
     </div>
 		<script type="text/javascript">
-			if(window.localStorage.getItem("loggedin") == "True"){
+			if(window.localStorage.getItem("Loggedin") == "True"){
 				window.location.href = "home.html";
 			}
 			function scan()
@@ -64,8 +64,17 @@
 					function(result)
 					{
 						if(result.format == "CODE_39"){
+								/*navigator.notification.prompt(
+								    'Please enter your name',  // message
+										function (input){
+											window.localStorage.setItem("Name", input.input1);
+										},                  // callback to invoke
+								    'Registration',            // title
+								    ['Ok','Call me Greeny'],             // buttonLabels
+								    'Greeny Kaustian'                 // defaultText
+								);*/
 								var value = result.text;
-								window.localStorage.setItem("loggedin", "True");
+								window.localStorage.setItem("Loggedin", "True");
 								window.localStorage.setItem("Type", "KAUST");
 								window.localStorage.setItem("Identity", result.text);
 								window.location.href = 'home.html';

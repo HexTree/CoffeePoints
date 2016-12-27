@@ -35,10 +35,11 @@
 <script>
   var type = window.localStorage.getItem("Type");
   var identity = window.localStorage.getItem("Identity");
+  var name = window.localStorage.getItem("Name");
 
   if(type == "KAUST"){
     document.getElementById("identity").innerHTML = "<span class='subline'>ID: " + identity + "</span>";
-    document.getElementById("name").innerHTML = "<strong>" + "Greeny Kaustian" + "</strong>";
+    document.getElementById("name").innerHTML = "<strong>" + name + "</strong>";
     document.getElementById("background").innerHTML = "<img class='profile-background' src='img/KAUST_BG.jpg' />";
     document.getElementById("thumbnail").innerHTML = "<img class='profile-thumbnail' src='img/KAUST_LOGO.png' />";
   }
@@ -51,7 +52,8 @@
   else{
     window.localStorage.removeItem("Type");
     window.localStorage.removeItem("Identity");
-    window.localStorage.removeItem("loggedin");
+    window.localStorage.removeItem("Name");
+    window.localStorage.removeItem("Loggedin");
   }
 
   //Global SignOut
@@ -61,7 +63,8 @@
     //remove local trace
     window.localStorage.removeItem("Type");
     window.localStorage.removeItem("Identity");
-    window.localStorage.removeItem("loggedin");
+    window.localStorage.removeItem("Name");
+    window.localStorage.removeItem("Loggedin");
 
     //deattach auth
     if(type == "Google"){
