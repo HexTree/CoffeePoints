@@ -80,5 +80,11 @@
 		<script src="js/nativedroid2.js"></script>
 		<script src="nd2settings.js"></script>
 		<script src="cordova.js"></script>
+		<script type="text/javascript">
+			if(!window.localStorage.getItem("points"))
+			{
+				window.localStorage.setItem("points", "0");
+			}
+		</script>
 	</body>
 </html>
