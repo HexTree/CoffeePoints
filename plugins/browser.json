@@ -1,0 +1,29 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.kaustgreengroup.sustainabilityapp"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.kaustgreengroup.sustainabilityapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.kaustgreengroup.sustainabilityapp"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.greengroup.sustainabilityapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.kaustgreengroup.sustainabilityapp"
+        }
+    }
+}
