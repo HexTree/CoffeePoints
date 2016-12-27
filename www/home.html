@@ -31,21 +31,24 @@
     </div>
 
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-
-        <p>
-          Information
-				</p>
-				
-		<p id="points"></p>
-		
+		<h3>Total Points</h3>
+		<p align="center" id="points"></p>
+		<h3>Last Results</h3>
+		<p align="center" id='data'></p>
+		<p id="domain"></p>
 		</div>
-		
-		
+
+
 		<div data-role="footer" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
             KAUST Green Group
         </div>
     </div>
+		<script>
+      //Change data to read exactly the last scan
+      var data = window.localStorage.getItem("LocalData");
+      document.getElementById('data').innerHTML = data;
+    </script>		<script src="id.js"></script>
 		<script src="js/loggedin.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>

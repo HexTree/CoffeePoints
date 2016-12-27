@@ -48,17 +48,18 @@ body {
 /* Portrait layout (default) */
 .app {
     position:absolute;             /* position in the center of the screen */
-    left: 8%;
     top:15%;
+    left:20%;
+    right:20%;
     height:50px;                   /* text area height */
     width:auto;                   /* text area width */
-    text-align:center;
+    align: center;
 }
 
 
 h1 {
     font-size:24px;
-    font-weight:normal;
+    font-weight:bolder;
     margin:0px;
     overflow:visible;
     padding:0px;

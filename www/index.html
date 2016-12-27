@@ -2,6 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<!--The following meta data is necessary but it blocks google sign-in. Requires fix
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com: google.com;
+																												style-src 'self' 'unsafe-inline' google.com;
+																												frame-src 'self' google.com;
+																												script-src 'self' google.com;
+																												media-src *">-->
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
@@ -9,7 +16,6 @@
     <link rel="stylesheet" href="vendor/waves/waves.min.css" />
     <link rel="stylesheet" href="vendor/wow/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
-
     <style>
         /* Prevent FOUC */
         body { opacity: 0; }
@@ -22,34 +28,70 @@
 
 	</head>
 	<body>
+		<div class='col-xs-4 center-xs'>
+			<div class='box'>
+				<img class='profile-thumbnail' src='img/KAUST_LOGO.png' />
+			</div>
+		</div>
 		<div role="main" align="center" class="app" data-inset="false" data-wow-delay="0.2s">
 				<h3>Sustainability App</h3>
-				<table>
-					<tr>
-						<td>
-							<!-- To be replaced with providor's button -->
-							<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Google</button></a>
-						</td>
-						<td>
-							<!-- To be replaced with providor's button -->
-							<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>
-						</td>
-					</tr>
-				</table>
 				<p>
 					<!-- To be replaced with providor's button -->
-          <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Example</button></a>
-					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Example</button></a>
+					<!--<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
+					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
         </p>
+				<p>
+						<a target="_blank" href="javascript:scan();" style="text-decoration: none"><button class="button">KAUST ID</button></a>
+				</p>
 				<p>
           <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Skip</button></a>
         </p>
+				<p align="center" id="messege"></p>
 		</div>
 		<div data-role="footer" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
             KAUST Green Group
         </div>
     </div>
+		<script type="text/javascript">
+			if(window.localStorage.getItem("Loggedin") == "True"){
+				window.location.href = "home.html";
+			}
+			function scan()
+			{
+				cordova.plugins.barcodeScanner.scan
+				(
+					function(result)
+					{
+						if(result.format == "CODE_39"){
+								/*navigator.notification.prompt(
+								    'Please enter your name',  // message
+										function (input){
+											window.localStorage.setItem("Name", input.input1);
+										},                  // callback to invoke
+								    'Registration',            // title
+								    ['Ok','Call me Greeny'],             // buttonLabels
+								    'Greeny Kaustian'                 // defaultText
+								);*/
+								var value = result.text;
+								window.localStorage.setItem("Loggedin", "True");
+								window.localStorage.setItem("Type", "KAUST");
+								window.localStorage.setItem("Identity", result.text);
+								window.location.href = 'home.html';
+						}
+						else{
+							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a barcode, (They are at the back of your card!)";
+						}
+					},
+					function(error)
+					{
+						//error callback
+						document.getElementById("messege").innerHTML = "Error: " + error;
+					}
+				);
+			}
+		</script>
+		<script src="id.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>

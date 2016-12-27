@@ -1,19 +1,13 @@
 {
-    "cordova-plugin-whitelist": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-whitelist@1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "phonegap-plugin-barcodescanner": {
         "source": {
             "type": "registry",
             "id": "phonegap-plugin-barcodescanner"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "CAMERA_USAGE_DESCRIPTION": " "
+        }
     },
     "cordova-plugin-compat": {
         "source": {
@@ -23,10 +17,27 @@
         "is_top_level": false,
         "variables": {}
     },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-whitelist",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
     "cordova-plugin-geolocation": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-geolocation"
+            "id": "cordova-plugin-geolocation@~2.4.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-dialogs"
         },
         "is_top_level": true,
         "variables": {}
