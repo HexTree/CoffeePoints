@@ -28,23 +28,61 @@
 
 	</head>
 	<body>
+		<div class='col-xs-4 center-xs'>
+			<div class='box'>
+				<img class='profile-thumbnail' src='img/KAUST_LOGO.png' />
+			</div>
+		</div>
 		<div role="main" align="center" class="app" data-inset="false" data-wow-delay="0.2s">
 				<h3>Sustainability App</h3>
 				<p>
 					<!-- To be replaced with providor's button -->
-					<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
-					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>
+					<!--<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
+					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
         </p>
+				<p>
+						<a target="_blank" href="javascript:scan();" style="text-decoration: none"><button class="button">KAUST ID</button></a>
+				</p>
 				<p>
           <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Skip</button></a>
         </p>
+				<p align="center" id="messege"></p>
 		</div>
 		<div data-role="footer" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
             KAUST Green Group
         </div>
     </div>
-		<script src="google.js"></script>
+		<script type="text/javascript">
+			if(window.localStorage.getItem("loggedin") == "True"){
+				window.location.href = "home.html";
+			}
+			function scan()
+			{
+				cordova.plugins.barcodeScanner.scan
+				(
+					function(result)
+					{
+						if(result.format == "CODE_39"){
+								var value = result.text;
+								window.localStorage.setItem("loggedin", "True");
+								window.localStorage.setItem("Type", "KAUST");
+								window.localStorage.setItem("Identity", result.text);
+								window.location.href = 'home.html';
+						}
+						else{
+							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a barcode, (They are at the back of your card!)";
+						}
+					},
+					function(error)
+					{
+						//error callback
+						document.getElementById("messege").innerHTML = "Error: " + error;
+					}
+				);
+			}
+		</script>
+		<script src="id.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
