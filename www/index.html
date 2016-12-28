@@ -41,57 +41,22 @@
 					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
         </p>
 				<p>
-						<a target="_blank" href="javascript:scan();" style="text-decoration: none"><button class="button">KAUST ID</button></a>
+						<a target="_blank" href="javascript:scanKAUST();" style="text-decoration: none"><button class="button">KAUST ID</button></a>
 				</p>
 				<p>
           <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Skip</button></a>
         </p>
-				<p align="center" id="messege"></p>
+				<p align="center" id="message"></p>
 		</div>
 		<div data-role="footer" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
             KAUST Green Group
         </div>
     </div>
-		<script type="text/javascript">
-			if(window.localStorage.getItem("Loggedin") == "True"){
-				window.location.href = "home.html";
-			}
-			function scan()
-			{
-				cordova.plugins.barcodeScanner.scan
-				(
-					function(result)
-					{
-						if(result.format == "CODE_39"){
-								/*navigator.notification.prompt(
-								    'Please enter your name',  // message
-										function (input){
-											window.localStorage.setItem("Name", input.input1);
-										},                  // callback to invoke
-								    'Registration',            // title
-								    ['Ok','Call me Greeny'],             // buttonLabels
-								    'Greeny Kaustian'                 // defaultText
-								);*/
-								var value = result.text;
-								window.localStorage.setItem("Loggedin", "True");
-								window.localStorage.setItem("Type", "KAUST");
-								window.localStorage.setItem("Identity", result.text);
-								window.location.href = 'home.html';
-						}
-						else{
-							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a barcode, (They are at the back of your card!)";
-						}
-					},
-					function(error)
-					{
-						//error callback
-						document.getElementById("messege").innerHTML = "Error: " + error;
-					}
-				);
-			}
-		</script>
-		<script src="id.js"></script>
+
+		<!-- javascripts -->
+		<script type="text/javascript" src="js/server.js"></script>
+		<script type="text/javascript" src="js/id.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
@@ -104,10 +69,23 @@
 		<script src="nd2settings.js"></script>
 		<script src="cordova.js"></script>
 		<script type="text/javascript">
+
+			//initiates total points
 			if(!window.localStorage.getItem("points"))
 			{
 				window.localStorage.setItem("points", "0");
 			}
+
+			//Detect logged in users and redirect them to home page on launch
+			if(window.localStorage.getItem("Loggedin") == "True"){
+				window.location.href = "home.html";
+			}
+
+			//Load server and display a message
+			document.getElementById("message").innerHTML = "Hi!";
+			loadServer();
+			var message = window.localStorage.getItem("server");
+			document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
 		</script>
 	</body>
 </html>
