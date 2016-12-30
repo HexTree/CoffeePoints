@@ -1,9 +1,9 @@
 /* This script will handle the authentication of the identity of the users
  *
  */
- //KAUST ID scan
+ //ID scan
  //Mechanism for logging in via scanning an id
- function scanKAUST()
+ function scanID()
  {
    cordova.plugins.barcodeScanner.scan
    (
@@ -17,11 +17,11 @@
                },                  // callback to invoke
                'Registration',            // title
                ['Ok','Call me Greeny'],             // buttonLabels
-               'Greeny Kaustian'                 // defaultText
+               'Greeny'                 // defaultText
            );*/
            var value = result.text;
            window.localStorage.setItem("Loggedin", "True");
-           window.localStorage.setItem("Type", "KAUST");
+           window.localStorage.setItem("Type", "SCAN");
            window.localStorage.setItem("Identity", result.text);
            window.location.href = 'home.html';
        }
