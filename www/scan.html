@@ -35,42 +35,17 @@
     </div>
 
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-
-        <p>
-            <a target="_blank" href="javascript:scan();" style="text-decoration: none"><button class="button">Scan</button></a>
-				</p>
-				<p align="center" id="messege"></p>
+			<div id="lastResult"></div>
+      <p>
+          <a target="_blank" href="javascript:scan();" style="text-decoration: none"><button class="button">Scan</button></a>
+			</p>
+			<p align="center" id="messege"></p>
 		</div>
 		<div data-role="footer" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
             Green Group
         </div>
     </div>
-		<script type="text/javascript">
-			function scan()
-			{
-				cordova.plugins.barcodeScanner.scan
-				(
-					function(result)
-					{
-						if(result.format == "QR_CODE"){
-								var value = result.text;
-								window.localStorage.setItem("LastResult", result.text);
-								window.localStorage.setItem("LocalData", window.localStorage.getItem("LocalData") + " " + result.text);
-								window.location.href = 'summary.html';
-						}
-						else{
-							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a QR code, (They are squared!)";
-						}
-					},
-					function(error)
-					{
-						//error callback
-						document.getElementById("messege").innerHTML = "Error: " + error;
-					}
-				);
-			}
-		</script>
 		<script src="id.js"></script>
 		<script src="js/loggedin.js"></script>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -84,5 +59,86 @@
 		<script src="js/nativedroid2.js"></script>
 		<script src="nd2settings.js"></script>
 		<script src="cordova.js"></script>
+		<script type="text/javascript">
+
+			//Show last result as a table row if exists
+			if(window.localStorage.getItem("LastResult")){
+					//Render the Table First
+					document.getElementById('lastResult').innerHTML = "<p>\n<h3 align='center'>Last Scan</h3>\n<div align='center' data-role='table' class='wow ui-content'>\n<div data-role='header'>\n<td>Time</td>\n<td>Location</td>\n<td>Type</td>\n</div>\n<div data-role='row'>\n<div id='scan'></div>\n</div>\n</div>\n</p>";
+
+					//Show the last result
+					var data = window.localStorage.getItem("LastResult");
+					var res = data.split("|");
+					document.getElementById('scan').innerHTML = '<tr><td>' + res[0]
+																										+ '</td><td>' + res[1]
+																										+ '</td><td>' + res[2]
+																										+ '</td></tr>';
+			}
+
+			//Necessary of the date string
+			var month = new Array();
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+
+			function scan()
+			{
+				cordova.plugins.barcodeScanner.scan
+				(
+					function(result)
+					{
+						if(result.format == "QR_CODE"){
+								var value = result.text;
+
+								//Timestamp String
+								var d = new Date();
+								var date = d.getDate() +'/'+
+								 					 month[d.getMonth()] +'/'+
+													 d.getFullYear() +'T'+
+													 d.getHours() +':'+
+													 d.getMinutes() +':'+
+													 d.getSeconds();
+
+								//Make sure there is a table first
+								if(!window.localStorage.getItem("LastResult")){
+									 //Render the Table First
+									 document.getElementById('lastResult').innerHTML = "<p>\n<h3 align='center'>Last Scan</h3>\n<div align='center' data-role='table' class='wow ui-content'>\n<div data-role='header'>\n<td>Time</td>\n<td>Location</td>\n<td>Type</td>\n</div>\n<div data-role='row'>\n<div id='scan'></div>\n</div>\n</div>\n</p>";
+								}
+								//Update LastResult
+								var last = date +'|'+ result.text;
+								window.localStorage.setItem("LastResult", last);
+
+								//Update LocalData
+								window.localStorage.setItem("LocalData", window.localStorage.getItem("LocalData") + '\\' + last);
+
+								//Update the last result
+								var data = window.localStorage.getItem("LastResult");
+								var res = data.split("|");
+								document.getElementById('scan').innerHTML = '<tr><td>' + res[0]
+																													+ '</td><td>' + res[1]
+																													+ '</td><td>' + res[2]
+																													+ '</td></tr>';
+						}
+						else{
+							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a QR code, (They are squared!)";
+						}
+					},
+					function(error)
+					{
+						//error callback
+						document.getElementById("messege").innerHTML = "Error: " + error;
+					}
+				);
+			}
+		</script>
 	</body>
 </html>
