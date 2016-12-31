@@ -37,11 +37,11 @@
   var identity = window.localStorage.getItem("Identity");
   var name = window.localStorage.getItem("Name");
 
-  if(type == "KAUST"){
+  if(type == "SCAN"){
     document.getElementById("identity").innerHTML = "<span class='subline'>ID: " + identity + "</span>";
     document.getElementById("name").innerHTML = "<strong>" + name + "</strong>";
-    document.getElementById("background").innerHTML = "<img class='profile-background' src='img/KAUST_BG.jpg' />";
-    document.getElementById("thumbnail").innerHTML = "<img class='profile-thumbnail' src='img/KAUST_LOGO.png' />";
+    document.getElementById("background").innerHTML = "<img class='profile-background' src='img/examples/card_bg_1.jpg' />";
+    document.getElementById("thumbnail").innerHTML = "<img class='profile-thumbnail' src='img/examples/card_thumb_1.jpg' />";
   }
   else if (type == "Google") {
 
@@ -62,8 +62,6 @@
 
     //remove local trace
     window.localStorage.removeItem("Type");
-    window.localStorage.removeItem("Identity");
-    window.localStorage.removeItem("Name");
     window.localStorage.removeItem("Loggedin");
 
     //deattach auth

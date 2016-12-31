@@ -44,7 +44,7 @@
 						<a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Scan ID</button></a>
 				</p>
 				<p>
-          <a target="_self" href="home.html" style="text-decoration: none"><button class="button">Skip</button></a>
+          <a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Skip</button></a>
         </p>
 				<p align="center" id="message"></p>
 		</div>
@@ -86,6 +86,25 @@
 			loadServer();
 			var message = window.localStorage.getItem("server");
 			document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
+
+			//Demo notification
+			function demo(){
+				navigator.notification.alert(
+						// message
+				    'The following will be a demo of the app. Any data collected through the demo will not count towards the challenge.',
+
+						// callback
+						function alertDismissed() {
+								window.location.href = "home.html";
+						},
+
+						// title
+				    'Demo!',
+
+						// button label    
+				    'Got it'
+				);
+			}
 		</script>
 	</body>
 </html>

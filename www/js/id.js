@@ -10,20 +10,54 @@
      function(result)
      {
        if(result.format == "CODE_39"){
-           /*navigator.notification.prompt(
-               'Please enter your name',  // message
-               function (input){
-                 window.localStorage.setItem("Name", input.input1);
-               },                  // callback to invoke
-               'Registration',            // title
-               ['Ok','Call me Greeny'],             // buttonLabels
-               'Greeny'                 // defaultText
-           );*/
            var value = result.text;
-           window.localStorage.setItem("Loggedin", "True");
-           window.localStorage.setItem("Type", "SCAN");
+
+           //MAke sure accounts Don't overlap
+           if(window.localStorage.getItem("Identity") != result.text){
+
+              //Wipe profile details if someone else is logging in.
+              if(window.localStorage.getItem("Name")){
+                  window.localStorage.removeItem("Name");
+              }
+           }
            window.localStorage.setItem("Identity", result.text);
-           window.location.href = 'home.html';
+
+           //Make sure local storage has the name
+           if(!window.localStorage.getItem("Name")){
+                navigator.notification.prompt(
+                    // message
+                    'Please enter your name',
+
+                    // callback to invoke
+                    function (input){
+
+                      //Store profile data
+                      window.localStorage.setItem("Name", input.input1);
+
+                      //User is logged in
+                      window.localStorage.setItem("Loggedin", "True");
+                      window.localStorage.setItem("Type", "SCAN");
+                      window.location.href = "home.html";
+                    },
+
+                    // title
+                    'Profile',
+
+                     // buttonLabels
+                    ['Ok','Call me Greeny'],
+
+                    // defaultText
+                    'Greeny'
+                );
+           }
+           else{
+             //User is logged in
+             window.localStorage.setItem("Loggedin", "True");
+             window.localStorage.setItem("Type", "SCAN");
+             window.location.href = "home.html";
+           }
+
+
        }
        else if (!result.cancelled) {
          document.getElementById("message").innerHTML = "Message: You are scanning a " + result.format + ". Please scan a barcode, (They are at the back of your card!)";
