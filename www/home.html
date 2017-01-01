@@ -31,8 +31,20 @@
     </div>
 
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-		<div align="center" data-role="header" class="ui-content wow">Total Points</div>
+		<div align="center" data-role="header" class="ui-content wow">Points</div>
 		<p align="center" id="points"></p>
+		<div align="center" data-role="table" class="wow ui-content">
+				<div data-role="row">
+						<div id="counters" data-role="row"></div>
+				</div>
+				<div data-role="row">
+						<tr>
+								<td>Mugs</td>
+								<td>Bottles</td>
+								<td>Bags</td>
+						</tr>
+				</div>
+		</div>
 
 		<h3>Last Results</h3>
 		<div align="center" data-role="table" class="wow ui-content">
@@ -42,7 +54,7 @@
 						<td>Type</td>
 				</div>
 				<div data-role="row">
-						<div id="scans"></div>
+						<div id="scans" data-role="row" class="wow ui-content"></div>
 				</div>
 		</div>
 		</div>
@@ -69,8 +81,18 @@
 		<script type="text/javascript">
 
 			//Show total number of points
-			value = window.localStorage.getItem("points");
+			var value = window.localStorage.getItem("points");
 			document.getElementById("points").innerHTML = value;
+
+			var mugs = window.localStorage.getItem("mugs");
+			var bottles = window.localStorage.getItem("bottles");
+			var bags = window.localStorage.getItem("bags");
+
+			document.getElementById("counters").innerHTML = "<tr>"
+																								+ "<td>"+mugs+"</td>"
+																								+	"<td>"+bottles+"</td>"
+																								+	"<td>"+bags+"</td>"
+																								+	"</tr>";
 
 			//Show Last Results
 			var data = window.localStorage.getItem("LocalData");

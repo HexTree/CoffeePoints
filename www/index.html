@@ -76,6 +76,23 @@
 				window.localStorage.setItem("points", "0");
 			}
 
+			if(!window.localStorage.getItem("mugs"))
+			{
+				window.localStorage.setItem("mugs", "0");
+			}
+
+			if(!window.localStorage.getItem("bottles"))
+			{
+				window.localStorage.setItem("bottles", "0");
+			}
+
+			if(!window.localStorage.getItem("bags"))
+			{
+				window.localStorage.setItem("bags", "0");
+			}
+
+
+
 			//Detect logged in users and redirect them to home page on launch
 			if(window.localStorage.getItem("Loggedin") == "True"){
 				window.location.href = "home.html";
@@ -101,7 +118,7 @@
 						// title
 				    'Demo!',
 
-						// button label    
+						// button label
 				    'Got it'
 				);
 			}

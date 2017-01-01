@@ -127,8 +127,31 @@
 																													+ '</td><td>' + res[1]
 																													+ '</td><td>' + res[2]
 																													+ '</td></tr>';
+
+								//increment counters
+								if (res[2] == "Mug") {
+										var mugs = parseInt(window.localStorage.getItem("mugs"));
+										window.localStorage.setItem("mugs", mugs + 1);
+
+										var points = parseInt(window.localStorage.getItem("points"));
+										window.localStorage.setItem("points", points + 3);
+								}
+								else if (res[2] == "Bottle") {
+										var bottles = parseInt(window.localStorage.getItem("bottles"));
+										window.localStorage.setItem("bottles", bottles + 1);
+
+										var points = parseInt(window.localStorage.getItem("points"));
+										window.localStorage.setItem("points", points + 2);
+								}
+								else if (res[2] == "Bag") {
+										var bags = parseInt(window.localStorage.getItem("bags"));
+										window.localStorage.setItem("bags", bags + 1);
+
+										var points = parseInt(window.localStorage.getItem("points"));
+										window.localStorage.setItem("points", points + 3);
+								}
 						}
-						else{
+						elseif(!result.cancelled){
 							document.getElementById("messege").innerHTML = "Messege: You are scanning a " + result.format + ". Please scan a QR code, (They are squared!)";
 						}
 					},

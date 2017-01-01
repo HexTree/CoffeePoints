@@ -18,8 +18,26 @@
               //Wipe profile details if someone else is logging in.
               if(window.localStorage.getItem("Name")){
                   window.localStorage.removeItem("Name");
+
+                  //Reset Counters
+                  window.localStorage.setItem("points", "0");
+                  window.localStorage.setItem("mugs", "0");
+                  window.localStorage.setItem("bottles", "0");
+                  window.localStorage.setItem("bags", "0");
               }
            }
+           else {
+             //reset counters of the demo
+             window.localStorage.setItem("points", "0");
+             window.localStorage.setItem("mugs", "0");
+             window.localStorage.setItem("bottles", "0");
+             window.localStorage.setItem("bags", "0");
+           }
+
+           //Check if resigning in and count points
+
+
+           //Set identity
            window.localStorage.setItem("Identity", result.text);
 
            //Make sure local storage has the name
