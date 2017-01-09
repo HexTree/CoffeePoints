@@ -35,7 +35,44 @@
            }
 
            //Check if resigning in and count points
+           var id = window.localStorage.getItem('Identity');
+           var data = window.localStorage.getItem("LocalData");
+           var rows = '';
+           var row = data.split('\\');
+           var res = '';
 
+           for (var i = 0; i < row.length; i++) {
+             res = row[i].split('|');
+             if(res[0] = id){
+                 if (res[2] == "MUG") {
+                     var mugs = parseInt(window.localStorage.getItem("mugs"));
+                     mugs++;
+                     window.localStorage.setItem("mugs", mugs);
+
+                     var points = parseInt(window.localStorage.getItem("points"));
+                     points = points + 3;
+                     window.localStorage.setItem("points", points);
+                 }
+                 else if (res[2] == "BOTTLE") {
+                     var bottles = parseInt(window.localStorage.getItem("bottles"));
+                     bottles++;
+                     window.localStorage.setItem("bottles", bottles);
+
+                     var points = parseInt(window.localStorage.getItem("points"));
+                     points = points + 2;
+                     window.localStorage.setItem("points", points);
+                 }
+                 else if (res[2] == "BAG") {
+                     var bags = parseInt(window.localStorage.getItem("bags"));
+                     bags++;
+                     window.localStorage.setItem("bags", bags);
+
+                     var points = parseInt(window.localStorage.getItem("points"));
+                     points = points + 3;
+                     window.localStorage.setItem("points", points);
+                 }
+             }
+          }
 
            //Set identity
            window.localStorage.setItem("Identity", result.text);
@@ -90,7 +127,7 @@
          showTorchButton : true, // iOS and Android
          prompt : "Place a barcode inside the scan area", // Android
          resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
-         formats : "QR_CODE", // default: all but PDF_417 and RSS_EXPANDED
+         formats : "CODE_39", // default: all but PDF_417 and RSS_EXPANDED
      }
    );
  }

@@ -4,11 +4,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
     <link rel="stylesheet" href="vendor/waves/waves.min.css" />
     <link rel="stylesheet" href="vendor/wow/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
+		<link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
 
     <style>
         /* Prevent FOUC */
@@ -32,17 +34,24 @@
 
 		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
 		<div align="center" data-role="header" class="ui-content wow">Points</div>
-		<p align="center" id="points"></p>
+		<br/><h1 align="center" id="points"></h1>
+		<br/>
 		<div align="center" data-role="table" class="wow ui-content">
-				<div data-role="row">
-						<div id="counters" data-role="row"></div>
-				</div>
-				<div data-role="row">
-						<tr>
-								<td>Mugs</td>
-								<td>Bottles</td>
-								<td>Bags</td>
-						</tr>
+				<div class="row">
+						<div class="col-xs">
+							<div class="box">
+									<div align="center" data-role="header" class="ui-content wow">Mugs</div>
+									<h4 id='mug'><h4/>
+							</div>
+							<div class="box">
+									<div align="center" data-role="header" class="ui-content wow">Bottles</div>
+									<h4 id='bot'><h4/>
+							</div>
+							<div class="box">
+									<div align="center" data-role="header" class="ui-content wow">Bags</div>
+									<h4 id='bag'><h4/>
+							</div>
+						</div>
 				</div>
 		</div>
 
@@ -88,11 +97,9 @@
 			var bottles = window.localStorage.getItem("bottles");
 			var bags = window.localStorage.getItem("bags");
 
-			document.getElementById("counters").innerHTML = "<tr>"
-																								+ "<td>"+mugs+"</td>"
-																								+	"<td>"+bottles+"</td>"
-																								+	"<td>"+bags+"</td>"
-																								+	"</tr>";
+			document.getElementById("mug").innerHTML = mugs;
+			document.getElementById("bot").innerHTML = bottles;
+			document.getElementById("bag").innerHTML = bags;
 
 			//Show Last Results
 			var id = 'demo';

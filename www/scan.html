@@ -130,26 +130,32 @@
 							                                           + '</td></tr>';
 
 							 //increment counters
-							 if (res[2] == "Mug") {
-							     var mugs = parseInt(window.localStorage.getItem("mugs"));
-							     window.localStorage.setItem("mugs", mugs + 1);
+							 if (res[2] == "MUG") {
+									 var mugs = parseInt(window.localStorage.getItem("mugs"));
+									 mugs++;
+									 window.localStorage.setItem("mugs", mugs);
 
-							     var points = parseInt(window.localStorage.getItem("points"));
-							     window.localStorage.setItem("points", points + 3);
+									 var points = parseInt(window.localStorage.getItem("points"));
+									 points = points + 3;
+									 window.localStorage.setItem("points", points);
 							 }
-							 else if (res[2] == "Bottle") {
-							     var bottles = parseInt(window.localStorage.getItem("bottles"));
-							     window.localStorage.setItem("bottles", bottles + 1);
+							 else if (res[2] == "BOTTLE") {
+									 var bottles = parseInt(window.localStorage.getItem("bottles"));
+									 bottles++;
+									 window.localStorage.setItem("bottles", bottles);
 
-							     var points = parseInt(window.localStorage.getItem("points"));
-							     window.localStorage.setItem("points", points + 2);
+									 var points = parseInt(window.localStorage.getItem("points"));
+									 points = points + 2;
+									 window.localStorage.setItem("points", points);
 							 }
-							 else if (res[2] == "Bag") {
-							     var bags = parseInt(window.localStorage.getItem("bags"));
-							     window.localStorage.setItem("bags", bags + 1);
+							 else if (res[2] == "BAG") {
+									 var bags = parseInt(window.localStorage.getItem("bags"));
+									 bags++;
+									 window.localStorage.setItem("bags", bags);
 
-							     var points = parseInt(window.localStorage.getItem("points"));
-							     window.localStorage.setItem("points", points + 3);
+									 var points = parseInt(window.localStorage.getItem("points"));
+									 points = points + 3;
+									 window.localStorage.setItem("points", points);
 							 }
 		       },
 		       function (error) {
