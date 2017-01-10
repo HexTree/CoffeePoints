@@ -43,7 +43,7 @@
 
            for (var i = 0; i < row.length; i++) {
              res = row[i].split('|');
-             if(res[0] = id){
+             if(res[0] == id){
                  if (res[3] == "MUG") {
                      var mugs = parseInt(window.localStorage.getItem("mugs"));
                      mugs++;
