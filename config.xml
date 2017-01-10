@@ -7,7 +7,7 @@
         It let's you collect sustainability points by scanning a specific barcode.
     </description>
     <author email="greengroup@kaust.edu.sa" href="https://www.facebook.com/KAUSTGreenGroup/?fref=ts">
-        KAUST Green Group
+        Green Group
     </author>
     <content src="index.html" />
     <access origin="*" />
