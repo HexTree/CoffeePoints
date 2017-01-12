@@ -99,10 +99,10 @@
                     'Profile',
 
                      // buttonLabels
-                    ['Ok','Call me Greeny'],
+                    ['Ok','Whatever'],
 
                     // defaultText
-                    'Greeny'
+                    'A Kaustian Has No Name'
                 );
            }
            else{
@@ -115,7 +115,13 @@
 
        }
        else if (!result.cancelled) {
-         document.getElementById("message").innerHTML = "Message: You are scanning a " + result.format + ". Please scan a barcode, (They are at the back of your card!)";
+         document.getElementById("message").innerHTML = "Message: You are scanning a " + result.format
+                                                      + ". Please scan a barcode, (They are at the back of your card!)";
+       }
+       else if (result.cancelled) {
+         document.getElementById("profile").innerHTML = "<a target='_blank' href='profile.html'"
+                                                       + "style='text-decoration: none'><button class='button'>Couldn't Scan :("
+                                                       + "</button></a>";
        }
      },
      function(error)

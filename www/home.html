@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="css/nativedroid2.css" />
 		<link rel="stylesheet" href="css/flexboxgrid.min.css" type="text/css">
 
-    <style>
-        /* Prevent FOUC */
-        body { opacity: 0; }
-    </style>
 		<meta name="format-detection" content="telephone=no">
 		<meta name="msapplication-tap-highlight" content="no">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<style>
+				body{
+					opacity: 0;
+				}
+		</style>
 		<title>Sustainability App</title>
 	</head>
 	<body>
@@ -32,7 +33,7 @@
         <h1 class="wow fadeIn" data-wow-delay='0.4s'>Sustainability App</h1>
     </div>
 
-		<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+		<div role="main" class="ui-content wow fadeIn body" data-inset="false" data-wow-delay="0.2s">
 		<div align="center" data-role="header" class="ui-content wow">Points</div>
 		<br/><h1 align="center" id="points"></h1>
 		<br/>
@@ -40,15 +41,15 @@
 				<div class="row">
 						<div class="col-xs">
 							<div class="box">
-									<div align="center" data-role="header" class="ui-content wow">Mugs</div>
+									<h3 align="center" class="ui-header"><img src="img/icons/Cup.svg" width="24px"/> Save A Mug Challenge</h3>
 									<h4 id='mug'><h4/>
 							</div>
 							<div class="box">
-									<div align="center" data-role="header" class="ui-content wow">Bottles</div>
+									<h3 align="center" class="ui-header"><img src="img/icons/Bottle.svg" width="24px"/> Save A Bottle Challenge</h3>
 									<h4 id='bot'><h4/>
 							</div>
 							<div class="box">
-									<div align="center" data-role="header" class="ui-content wow">Bags</div>
+									<h3 align="center" class="ui-header"><img src="img/icons/Bag.svg" width="24px"/> Save A Bag Challenge</h3>
 									<h4 id='bag'><h4/>
 							</div>
 						</div>
