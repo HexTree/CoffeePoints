@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.greengroup.sustainabilityapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Sustainability App</name>
+    <name>Sustainability</name>
     <description>
         An app that is part of a movement to promote sustainabilty at KAUST.
         This app is part of a challenge and is designed for KAUST Resedents only.
@@ -21,10 +21,12 @@
     <allow-intent href="*" />
     <access origin="*" />
     <platform name="android">
+        <icon src="res/android/logo.png" density="hdpi"/>
         <allow-intent href="market:*" />
         <allow-navigation href="*" />
     </platform>
     <platform name="ios">
+        <icon src="res/ios/logo.png" width="76" height="76"/>
         <allow-navigation href="gap:*" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />

@@ -21,7 +21,7 @@
 					opacity: 0;
 				}
 		</style>
-		<title>Sustainability App</title>
+		<title>Home</title>
 	</head>
 	<body>
 
@@ -29,50 +29,39 @@
 		<div id="panel"></div>
 
     <div data-role="header" data-position="fixed" class="wow fadeIn">
-        <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
-        <h1 class="wow fadeIn" data-wow-delay='0.4s'>Sustainability App</h1>
+        <a href="#leftpanel" class="clr-bg-green ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s'>Home</h1>
     </div>
 
-		<div role="main" class="ui-content wow fadeIn body" data-inset="false" data-wow-delay="0.2s">
-		<div align="center" data-role="header" class="ui-content wow">Points</div>
-		<br/><h1 align="center" id="points"></h1>
-		<br/>
-		<div align="center" data-role="table" class="wow ui-content">
-				<div class="row">
-						<div class="col-xs">
-							<div class="box">
-									<h3 align="center" class="ui-header"><img src="img/icons/Cup.svg" width="24px"/> Save A Mug Challenge</h3>
-									<h4 id='mug'><h4/>
-							</div>
-							<div class="box">
-									<h3 align="center" class="ui-header"><img src="img/icons/Bottle.svg" width="24px"/> Save A Bottle Challenge</h3>
-									<h4 id='bot'><h4/>
-							</div>
-							<div class="box">
-									<h3 align="center" class="ui-header"><img src="img/icons/Bag.svg" width="24px"/> Save A Bag Challenge</h3>
-									<h4 id='bag'><h4/>
-							</div>
+		<div role="main" class="fadeIn app" data-inset="false" data-wow-delay="0.2s">
+
+				<div align="center" data-role="table" class="wow ui-content">
+						<div class="row">
+								<div class="col-xs">
+									<div class="box">
+											<h2 align="center" class="ui-header"><img src="img/icons/Cup.svg" width="24px"/> Mugs</h2>
+											<h1 id='mug'><h1/>
+									</div>
+									<div class="box">
+											<h2 align="center" class="ui-header"><img src="img/icons/Bottle.svg" width="24px"/> Bottles</h2>
+											<h1 id='bot'><h1/>
+									</div>
+									<div class="box">
+											<h2 align="center" class="ui-header"><img src="img/icons/Bag.svg" width="24px"/> Bags</h2>
+											<h1 id='bag'><h1/>
+									</div>
+								</div>
 						</div>
 				</div>
-		</div>
 
-		<h3>Last Results</h3>
-		<div align="center" data-role="table" class="wow ui-content">
-				<div data-role="header">
-						<td>Time</td>
-						<td>Location</td>
-						<td>Type</td>
-				</div>
-				<div data-role="row">
-						<div id="scans" data-role="row" class="wow ui-content"></div>
-				</div>
-		</div>
+				<h3 align="center" class="ui-header wow">Total Points</h3>
+				<h4 align="center" id="points"></h4>
 		</div>
 
 
-		<div data-role="footer" data-position="fixed">
+		<div data-role="footer" align="center" data-position="fixed">
         <div class="col-xs-12 col-sm-12 col-md-12">
-            Green Group
+            GreenGroup@kaust.edu.sa
         </div>
     </div>
 		<script src="id.js"></script>
@@ -102,30 +91,6 @@
 			document.getElementById("bot").innerHTML = bottles;
 			document.getElementById("bag").innerHTML = bags;
 
-			//Show Last Results
-			var id = 'demo';
-			if(window.localStorage.getItem('Loggedin')){
-					id = window.localStorage.getItem('Identity');
-			}
-			var data = window.localStorage.getItem("LocalData");
-			var rows = '';
-			var row = data.split('\\');
-			var res = '';
-
-			var length = row.length;
-			if(length > 10){
-				length = 10;
-			}
-			for (var i = row.length - 1; i > row.length-1-length; i--) {
-				res = row[i].split('|');
-				if(res[0] == id){
-						rows = rows + '<br /><tr><td>' + res[1]
-												+ '</td><td>' + res[2]
-											  + '</td><td>' + res[3]
-										    + '</td></tr>';
-				}
-			}
-			document.getElementById('scans').innerHTML = rows;
 		</script>
 	</body>
 </html>

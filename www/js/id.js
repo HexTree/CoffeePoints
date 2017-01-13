@@ -50,7 +50,7 @@
                      window.localStorage.setItem("mugs", mugs);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 3;
+                     points = points + 1;
                      window.localStorage.setItem("points", points);
                  }
                  else if (res[3] == "BOTTLE") {
@@ -59,7 +59,7 @@
                      window.localStorage.setItem("bottles", bottles);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 2;
+                     points = points + 1;
                      window.localStorage.setItem("points", points);
                  }
                  else if (res[3] == "BAG") {
@@ -68,7 +68,7 @@
                      window.localStorage.setItem("bags", bags);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 3;
+                     points = points + 1;
                      window.localStorage.setItem("points", points);
                  }
              }

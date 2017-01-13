@@ -24,38 +24,37 @@
 		<meta name="msapplication-tap-highlight" content="no">
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<title>Coffee Points</title>
+		<title>Sustainability Challenge</title>
 
 	</head>
 	<body>
-		<div class='col-xs-4 center-xs'>
-			<div class='box'>
-				<img class='profile-thumbnail' src='img/logo.png' />
-			</div>
-		</div>
-		<div role="main" align="center" class="app" data-inset="false" data-wow-delay="0.2s">
-				<h3>Sustainability App</h3>
-				<p>
+		<div role="main" align="center" class="login" data-inset="false" data-wow-delay="0.2s">
+				<p align="center">
+						<img class='profile-thumbnail' src='img/Header.png' width="100%"/>
+				</p>
+				<!--<p>-->
 					<!-- To be replaced with providor's button -->
 					<!--<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
 					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
-        </p>
+        <!--</p>-->
 				<p>
-						<a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Scan ID</button></a>
+						<a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Sign In</button></a>
 				</p>
 				<p>
-          	<a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Skip</button></a>
+          	<a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Demo</button></a>
         </p>
 				<p>
 						<div id="profile"></div>
 				</p>
-				<p align="center" id="message"></p>
+				<p align="center">
+						<img class='profile-thumbnail' src='img/Footer.png' width="100%"/>
+				</p>
 		</div>
-		<div data-role="footer" data-position="fixed">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            Green Group
-        </div>
-    </div>
+		<div data-role="footer" align="center" data-position="fixed">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+						GreenGroup@kaust.edu.sa
+				</div>
+		</div>
 
 		<!-- javascripts -->
 		<script type="text/javascript" src="js/server.js"></script>
@@ -100,10 +99,10 @@
 			}
 
 			//Load server and display a message
-			document.getElementById("message").innerHTML = "Hi!";
-			loadServer();
-			var message = window.localStorage.getItem("server");
-			document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
+			//document.getElementById("message").innerHTML = "Hi!";
+			//loadServer();
+			//var message = window.localStorage.getItem("server");
+			//document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
 
 			//Demo notification
 			function demo(){

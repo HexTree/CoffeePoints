@@ -45,17 +45,35 @@ body {
     width:100%;
 }
 
-/* Portrait layout (default) */
 .app {
     position:absolute;             /* position in the center of the screen */
-    top:15%;
-    left:20%;
-    right:20%;
+    top:10%;
+    left:4%;
+    right:4%;
     height:50px;                   /* text area height */
     width:auto;                   /* text area width */
     align: center;
 }
 
+.login {
+    position:absolute;             /* position in the center of the screen */
+    top:0%;
+    left:5%;
+    right:5%;
+    height:50px;                   /* text area height */
+    width:auto;                   /* text area width */
+    align: center;
+}
+
+.map {
+    position:absolute;             /* position in the center of the screen */
+    top:0%;
+    left:0%;
+    right:0%;
+    width:auto;                   /* text area width */
+    height: auto;
+    align: center;
+}
 
 h1 {
     font-size:24px;
@@ -81,7 +99,7 @@ h1 {
 }
 
 .event.received {
-    background-color:#4B946A;
+    background-color:#37B751;
     display:none;
 }
 
