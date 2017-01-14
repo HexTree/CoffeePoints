@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="vendor/wow/animate.css" />
+    <link rel="stylesheet" href="css/nativedroid2.css" />
+
+    <style>
+        /* Prevent FOUC */
+        body { opacity: 0; }
+    </style>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<title>Profile</title>
+	</head>
+	<body>
+
+		<!-- Refer to the script for changes -->
+		<div id="panel"></div>
+
+    <div data-role="header" data-position="fixed" class="wow fadeIn">
+        <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+        <h1 class="wow fadeIn" data-wow-delay='0.4s'>Profile</h1>
+    </div>
+
+		<div role="main" class="fadeIn app" data-inset="false" data-wow-delay="0.2s">
+
+        <p>
+          <div id="idarea"></div>
+        </p>
+
+        <p>
+          <label for="name2b">Name:</label>
+          <input type="text" name="name" id="nameb" value="" data-clear-btn="true" placeholder="Unchanged">
+    		</p>
+
+        <p>
+            <a target="_blank" href="javascript:handler();" style="text-decoration: none"><button class="button">Save</button></a>
+        </p>
+
+        <p>
+            <p id="data" class="wow ui-content"></p>
+        </p>
+		</div>
+		<div data-role="footer" align="center" data-position="fixed">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            GreenGroup@kaust.edu.sa
+        </div>
+    </div>
+		<script src="id.js"></script>
+		<script src="js/loggedin.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+		<script src="cordova.js"></script>
+    <script type="text/javascript">
+        if(window.localStorage.getItem("Loggedin") == "True"){
+            var id = window.localStorage.getItem("Identity");
+            document.getElementById("idarea").innerHTML = "<label for='idb'>ID:</label><br/><p>" + id + "</p>";
+        } else {
+            document.getElementById("idarea").innerHTML = "<label for='idb'>Manual Sign in:</label><br/>"
+                                                        + "<input type='text' name='id' id='idb' value='' "
+                                                        + "data-clear-btn='true' placeholder='Type your ID'>";
+        }
+
+        function handler(){
+
+            if(window.localStorage.getItem("Loggedin") == "True"){
+                var name = document.getElementById("nameb").value;
+
+                window.localStorage.setItem("Name", name);
+
+                document.getElementById("data").innerHTML = "Your name was updated!"
+                                                          + name;
+            } else {
+                var id = document.getElementById("idb").value;
+                var name = document.getElementById("nameb").value;
+
+                window.localStorage.setItem("Identity", id);
+                window.localStorage.setItem("Name", name);
+                window.localStorage.setItem("Loggedin", "True");
+                window.localStorage.setItem("Type", "Manual");
+
+                document.getElementById("data").innerHTML = "You have been manually logged in!"
+                                                          + id + ' ' + name;
+            }
+
+            window.location.reload();
+        }
+
+        //safety sanitizer
+    </script>
+	</body>
+</html>
