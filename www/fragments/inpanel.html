@@ -33,6 +33,7 @@
   </ul>
 </div>
 <script src="js/scan.js"></script>
+<script src="js/id.js"></script>
 <script>
   var type = window.localStorage.getItem("Type");
   var identity = window.localStorage.getItem("Identity");
@@ -55,22 +56,5 @@
     window.localStorage.removeItem("Identity");
     window.localStorage.removeItem("Name");
     window.localStorage.removeItem("Loggedin");
-  }
-
-  //Global SignOut
-  function signOut(){
-    var type = window.localStorage.getItem("Type");
-
-    //remove local trace
-    window.localStorage.removeItem("Type");
-    window.localStorage.removeItem("Loggedin");
-
-    //deattach auth
-    if(type == "Google"){
-      googleSignOut();
-    }
-
-    //reload page
-    window.location.reload();
   }
 </script>

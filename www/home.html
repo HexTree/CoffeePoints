@@ -80,16 +80,15 @@
 		<script type="text/javascript">
 
 			//Show total number of points
-			var value = window.localStorage.getItem("points");
-			document.getElementById("points").innerHTML = value;
-
 			var mugs = window.localStorage.getItem("mugs");
 			var bottles = window.localStorage.getItem("bottles");
 			var bags = window.localStorage.getItem("bags");
+			var points = window.localStorage.getItem("points");
 
 			document.getElementById("mug").innerHTML = mugs;
 			document.getElementById("bot").innerHTML = bottles;
 			document.getElementById("bag").innerHTML = bags;
+			document.getElementById("points").innerHTML = points;
 
 		</script>
 	</body>

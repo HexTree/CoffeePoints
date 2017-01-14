@@ -7,12 +7,11 @@
  {
    cordova.plugins.barcodeScanner.scan
    (
-     function(result)
-     {
+     function(result){
        if(result.format == "CODE_39"){
            var value = result.text;
 
-           //MAke sure accounts Don't overlap
+           //Make sure accounts Don't overlap
            if(window.localStorage.getItem("Identity") != result.text){
 
               //Wipe profile details if someone else is logging in.
@@ -50,7 +49,7 @@
                      window.localStorage.setItem("mugs", mugs);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 1;
+                     points++;
                      window.localStorage.setItem("points", points);
                  }
                  else if (res[3] == "BOTTLE") {
@@ -59,7 +58,7 @@
                      window.localStorage.setItem("bottles", bottles);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 1;
+                     points++;
                      window.localStorage.setItem("points", points);
                  }
                  else if (res[3] == "BAG") {
@@ -68,18 +67,18 @@
                      window.localStorage.setItem("bags", bags);
 
                      var points = parseInt(window.localStorage.getItem("points"));
-                     points = points + 1;
+                     points++;
                      window.localStorage.setItem("points", points);
                  }
              }
           }
 
-           //Set identity
-           window.localStorage.setItem("Identity", result.text);
+          //Set identity
+          window.localStorage.setItem("Identity", result.text);
 
-           //Make sure local storage has the name
-           if(!window.localStorage.getItem("Name")){
-                navigator.notification.prompt(
+          //Make sure local storage has the name
+          if(!window.localStorage.getItem("Name")){
+              navigator.notification.prompt(
                     // message
                     'Please enter your name',
 
@@ -103,23 +102,23 @@
 
                     // defaultText
                     'A Kaustian Has No Name'
-                );
-           }
-           else{
+              );
+          }
+          else{
              //User is logged in
              window.localStorage.setItem("Loggedin", "True");
              window.localStorage.setItem("Type", "SCAN");
              window.location.href = "home.html";
-           }
+          }
 
 
        }
        else if (!result.cancelled) {
-         document.getElementById("message").innerHTML = "Message: You are scanning a " + result.format
-                                                      + ". Please scan a barcode, (They are at the back of your card!)";
+          document.getElementById("message").innerHTML = "Message: You are scanning a " + result.format
+                                                       + ". Please scan a barcode, (They are at the back of your card!)";
        }
        else if (result.cancelled) {
-         document.getElementById("profile").innerHTML = "<a target='_blank' href='profile.html'"
+          document.getElementById("profile").innerHTML = "<a target='_blank' href='profile.html'"
                                                        + "style='text-decoration: none'><button class='button'>Couldn't Scan :("
                                                        + "</button></a>";
        }
@@ -135,11 +134,11 @@
          resultDisplayDuration: 0, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
          formats : "CODE_39", // default: all but PDF_417 and RSS_EXPANDED
      }
-   );
- }
+  );
+}
 
- //Google Auth
- function googleSignIn(){
+//Google Auth
+function googleSignIn(){
    window.plugins.googleplus.login({
          'scopes': 'default', // optional space-separated list of scopes, the default is sufficient for login and basic profile info
        },
@@ -151,11 +150,34 @@
          alert('error: ' + msg);
        }
    );
- }
- function googleSignOut(){
+}
+function googleSignOut(){
      window.plugins.googleplus.logout(
      function (msg) {
         window.location.href = "index.html";
         }
      );
- }
+}
+
+//Global SignOut
+function signOut(){
+  var type = window.localStorage.getItem("Type");
+
+  //Reset Counters
+  window.localStorage.setItem("points", "0");
+  window.localStorage.setItem("mugs", "0");
+  window.localStorage.setItem("bottles", "0");
+  window.localStorage.setItem("bags", "0");
+
+  //remove local trace
+  window.localStorage.removeItem("Type");
+  window.localStorage.removeItem("Loggedin");
+
+  //deattach auth
+  if(type == "Google"){
+    googleSignOut();
+  }
+
+  //reload page
+  window.location.reload();
+}
