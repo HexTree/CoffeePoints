@@ -14,49 +14,75 @@
         /* Prevent FOUC */
         body { opacity: 0; }
 
-        .green{color: #37B751;}
+        .white{color: white;}
 
         .phrase{
-            color: #37B751;
+            color: white;
             text-decoration: bold;
         }
 
+				.body{
+						background-image: url(img/challenge/bg.jpg);
+						background-size: 100% 100%;
+				}
+
         .beSustainable{
+						background-color: #288098;
             background-image: url(img/challenge/earth_recycle.png);
             background-repeat: no-repeat;
-            background-position: right top;
-            background-attachment: fixed;
-            margin-right: 100px;
+            background-position: right;
+						background-size: 100px 100px;
         }
 
         .collectPoints{
+						background-color: #C1631E;
             background-image: url(img/challenge/barcode.png);
             background-repeat: no-repeat;
-            background-position: left top;
-            background-attachment: fixed;
-            margin-left: 100px;
+            background-position: left;
+						background-size: 100px 100px;
         }
 
         .winPrizes{
+						background-color: #6E8F37;
             background-image: url(img/challenge/bike.png);
             background-repeat: no-repeat;
-            background-position: right top;
-            background-attachment: fixed;
-            margin-right: 100px;
+            background-position: right;
+						background-size: 100px 100px;
         }
 
         .tellYourFriends{
+						background-color: #583B76;
             background-image: url(img/challenge/speaker.png);
             background-repeat: no-repeat;
-            background-position: left top;
-            background-attachment: fixed;
-            margin-left: 100px;
+            background-position: left;
+						background-size: 100px 100px;
         }
 
-        .boxHeader{
+        .boxLeftHeader{
+						color: white;
             text-decoration: bold;
             text-decoration: underline;
+						margin-left: 116px;
         }
+
+				.boxRightHeader{
+						color: white;
+            text-decoration: bold;
+            text-decoration: underline;
+						margin-left: 16px;
+        }
+
+				.leftText{
+						color: white;
+						margin-left: 116px;
+						margin-right: 16px;
+				}
+
+				.rightText{
+						color: white;
+						margin-right: 116px;
+						margin-left: 16px;
+				}
     </style>
 		<meta name="format-detection" content="telephone=no">
 		<meta name="msapplication-tap-highlight" content="no">
@@ -73,14 +99,13 @@
         <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
         <h1 class="wow fadeIn" data-wow-delay='0.4s'>Challenge</h1>
     </div>
-
-		<div role="main" class="fadeIn app" data-inset="false" data-wow-delay="0.2s">
-        <h5 align="center" class="green">The Green Group presents</h5>
-        <h4 align="center" class="green">THE <span class="phrase">KAUST SUSTAINABILITY CHALLENGE</span></h4>
+		<div role="main" class="fadeIn present body" data-inset="false" data-wow-delay="0.2s">
+        <h5 align="center" class="white">The Green Group presents</h5>
+        <h4 align="center" class="white">THE <span class="phrase">KAUST SUSTAINABILITY CHALLENGE</span></h4>
 				<p>
             <div class="beSustainable">
-                <h4 class="boxHeader">BE SUSTAINABLE</h4>
-                <p>
+                <h3 class="boxRightHeader"> BE SUSTAINABLE</h3>
+                <p class="rightText">
                     Avoid using disposable products to reduce pollution and C02
                     emissions produced throughout their lifecycle.
                 </p>
@@ -88,8 +113,8 @@
 				</p>
         <p>
             <div class="collectPoints">
-                <h4 class="boxHeader">COLLECT POINTS</h4>
-                <p>
+                <h3 class="boxLeftHeader">COLLECT POINTS</h3>
+                <p class="leftText">
                     Scan the QR code when you bring your own:<br/>
                     - mug to the coffee shop<br/>
                     - bag at the grocery store<br/>
@@ -99,8 +124,8 @@
         </p>
         <p>
             <div class="winPrizes">
-                <h4 class="boxHeader">WIN PRIZES</h4>
-                <p>
+                <h3 class="boxRightHeader"> WIN PRIZES</h3>
+                <p class="rightText">
                     Bikes, iPads, watersports classes, dinners in KAUST
                     restaurants, shopping vouchers, reusable bottles,
                     bags and mugs.
@@ -109,8 +134,8 @@
         </p>
         <p>
             <div class="tellYourFriends">
-                <h4 class="boxHeader">TELL YOUR FRIENDS</h4>
-                <p>
+                <h3 class="boxLeftHeader">TELL YOUR FRIENDS</h3>
+                <p class="leftText">
                     Invite your friends to participate and help spreading
                     the word for a cleaner and safer environment!
                 </p>
