@@ -75,6 +75,16 @@ body {
     align: center;
 }
 
+.present{
+    position:absolute;             /* position in the center of the screen */
+    top:10%;
+    left:0%;
+    right:0%;
+    width:auto;                   /* text area width */
+    height: auto;
+    align: center;
+}
+
 h1 {
     font-size:24px;
     font-weight:bolder;
