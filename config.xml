@@ -9,8 +9,6 @@
     <author email="greengroup@kaust.edu.sa" href="https://www.facebook.com/KAUSTGreenGroup/?fref=ts">
         Green Group
     </author>
-    <icon src="www/img/logo.png" />
-    <preference name="prerendered-icon" value="false" />
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
