@@ -77,10 +77,14 @@ function scan(){
 						document.getElementById("bot").innerHTML = bottles;
 						document.getElementById("bag").innerHTML = bags;
 						document.getElementById("points").innerHTML = points;
-						//window.location.reload();
 		   	},
 		    function (error) {
-		       alert("Scanning failed: " + error);
+						navigator.notification.alert(
+							"Cannot Scan. Did you allow me to use the camera? " + error,  // message
+							alertDismissed,         // callback
+							'Game Over',            // title
+							'Ok'                  // buttonName
+						);
 		    },
 		    {
 		       showTorchButton : true, // iOS and Android
