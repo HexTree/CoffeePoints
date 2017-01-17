@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<!--The following meta data is necessary but it blocks google sign-in. Requires fix
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com: google.com;
+																												style-src 'self' 'unsafe-inline' google.com;
+																												frame-src 'self' google.com;
+																												script-src 'self' google.com;
+																												media-src *">-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="vendor/wow/animate.css" />
+    <link rel="stylesheet" href="css/nativedroid2.css" />
+    <style>
+        /* Prevent FOUC */
+        body { opacity: 0; }
+    </style>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<title>Sustainability Challenge</title>
+
+	</head>
+	<body>
+		<div role="main" align="center" class="login" data-inset="false" data-wow-delay="0.2s">
+				<p align="center">
+						<img class='profile-thumbnail' src='img/Header.png' width="100%"/>
+				</p>
+				<!--<p>-->
+					<!-- To be replaced with providor's button -->
+					<!--<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
+					<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
+        <!--</p>-->
+				<p>
+						<a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Sign In</button></a>
+				</p>
+				<p>
+          	<a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Demo</button></a>
+        </p>
+				<p>
+						<div id="profile"></div>
+				</p>
+				<p align="center">
+						<img class='profile-thumbnail' src='img/Footer.png' width="100%"/>
+				</p>
+		</div>
+
+		<!-- javascripts -->
+		<script type="text/javascript" src="js/server.js"></script>
+		<script type="text/javascript" src="js/id.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="vendor/wow/wow.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="nd2settings.js"></script>
+		<script src="cordova.js"></script>
+		<script type="text/javascript">
+
+			//initiates total points
+			if(!window.localStorage.getItem("points")){
+				window.localStorage.setItem("points", "0");
+			}
+
+			if(!window.localStorage.getItem("mugs")){
+				window.localStorage.setItem("mugs", "0");
+			}
+
+			if(!window.localStorage.getItem("bottles")){
+				window.localStorage.setItem("bottles", "0");
+			}
+
+			if(!window.localStorage.getItem("bags")){
+				window.localStorage.setItem("bags", "0");
+			}
+
+			if(!window.localStorage.getItem("LocalData")){
+				window.localStorage.setItem("LocalData", '');
+			}
+
+			//Detect logged in users and redirect them to home page on launch
+			if(window.localStorage.getItem("Loggedin") == "True"){
+				window.location.href = "home.html";
+			}
+
+			//Load server and display a message
+			//document.getElementById("message").innerHTML = "Hi!";
+			//loadServer();
+			//var message = window.localStorage.getItem("server");
+			//document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
+
+			//Demo notification
+			function demo(){
+				navigator.notification.alert(
+						// message
+				    'The following will be a demo of the app. Any data collected through the demo will not count towards the challenge.',
+
+						// callback
+						function alertDismissed() {
+								window.location.href = "home.html";
+						},
+
+						// title
+				    'Demo!',
+
+						// button label
+				    'Got it'
+				);
+			}
+		</script>
+	</body>
+</html>
