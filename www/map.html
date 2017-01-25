@@ -28,7 +28,18 @@
 		maxZoom: 19,
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(mymap);
-
+	
+	var iconwidth = 20;
+	
+	var mugIcon = L.icon({
+		iconUrl: 'img/mug.png',
+		
+		iconSize:     [iconwidth, iconwidth], // size of the icon
+		iconAnchor:   [iconwidth/2, iconwidth/2], // point of the icon which will correspond to marker's location
+		popupAnchor:  [0, -iconwidth] // point from which the popup should open relative to the iconAnchor
+	});
+	
+	L.marker([22.30821, 39.10495], {icon: mugIcon}).bindPopup("Joffrey's").addTo(mymap);
 </script>
 
 </body>

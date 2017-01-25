@@ -1,10 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.greengroup.sustainabilityapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Sustainability</name>
+<widget id="com.greengroup.ksc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>KAUST Sustainability Challenge</name>
     <description>
-        An app that is part of a movement to promote sustainabilty at KAUST.
-        This app is part of a challenge and is designed for KAUST Resedents only.
-        It let's you collect sustainability points by scanning a specific barcode.
+        An app to promote sustainability at KAUST.
     </description>
     <author email="greengroup@kaust.edu.sa" href="https://www.facebook.com/KAUSTGreenGroup/?fref=ts">
         Green Group
