@@ -13,3 +13,5 @@ Test QR code:
 This is developed using Cordova. To test or modify, please install according to instructions at http://cordova.apache.org/docs/en/4.0.0/guide/cli/index.html#add-plugin-features
 
 Cordova is able to export to both Android and iOS, which makes it an ideal cross-platform tool for our purposes.
+
+Google Play link: https://play.google.com/store/apps/details?id=com.greengroup.ksc
