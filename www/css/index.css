@@ -58,6 +58,7 @@ body {
 .login {
     height: 100%;
     width: 100%;
+	margin: 5px;
     align-content: center;
     position: absolute;
 }
@@ -157,33 +158,13 @@ h1 {
 }
 
 header {
-    width: 100%;
+    height: 40%;
 }
 
 buttonholder {
-/* position: absolute; */
-width: 100%;
+    height: 20%;
 }
 
 footer {
-    width: 100%;
+    height: 40%;
 }
-/* ul { */
-/* display: table; */
-/* table-layout: fixed; */
-/* height: 100%; */
-/* width: 100%; */
-/* align-content: center; */
-/* } */
-/* li { */
-/* text-align: center; */
-/* align-content: center; */
-/* width: 100%; */
-/* display: table-row; */
-/* } */
-/* span { */
-/* display: table-cell; */
-/* width: 100%; */
-/* vertical-align: middle; */
-/* text-shadow: 0 0; */
-/* } */

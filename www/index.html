@@ -34,27 +34,36 @@
 				<!-- <li><span><a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Sign In</button></a></span></li> -->
 				<!-- <li><span><object align="centre" data="img/footer.svg" type="image/svg+xml"></object></span></li> -->
 			<!-- </ul> -->
-			<div class="header">
-				<object data="img/header.svg" type="image/svg+xml"></object>
-			</div>
+			<!-- <div class="header"> -->
+				<!-- <object data="img/header.svg" type="image/svg+xml"></object> -->
+			<!-- </div> -->
+			
+			<figure align="center">
+				<div>
+					<img src="img/header.svg" >
+				</div>
+			</figure>
 
 			<!--<p>-->
 				<!-- To be replaced with providor's button -->
 				<!--<a target='_self' href='javascript:googleSignIn();' style='text-decoration: none'><button class='button'>Google</button></a>
 				<a target="_self" href="home.html" style="text-decoration: none"><button class="button">Microsoft</button></a>-->
 			<!--</p>-->
+			
 			<div class="buttonholder">
 				<a target="_blank" href="javascript:scanID();" style="text-decoration: none"><button class="button">Sign In</button></a>
+				<a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Demo</button></a>
 			</div>
-			<!-- <p> -->
-				<!-- <a target="_blank" href="javascript:demo();" style="text-decoration: none"><button class="button">Demo</button></a> -->
-			<!-- </p> -->
+
 			<!-- <p> -->
 				<!-- <div id="profile"></div> -->
 			<!-- </p> -->
-			<div class="footer">
-				<object data="img/footer.svg" type="image/svg+xml"></object>
-			</div>
+			
+			<figure>
+				<div>
+					<img src="img/footer.svg" >
+				</div>
+			</figure>
 		</div>
 
 		<!-- javascripts -->
@@ -99,30 +108,30 @@
 				window.location.href = "home.html";
 			}
 
-			//Load server and display a message
-			//document.getElementById("message").innerHTML = "Hi!";
-			//loadServer();
-			//var message = window.localStorage.getItem("server");
-			//document.getElementById("message").innerHTML = "Message: Server is " + message + ".";
+			<!-- //Load server and display a message -->
+			<!-- //document.getElementById("message").innerHTML = "Hi!"; -->
+			<!-- //loadServer(); -->
+			<!-- //var message = window.localStorage.getItem("server"); -->
+			<!-- //document.getElementById("message").innerHTML = "Message: Server is " + message + "."; -->
 
-			//Demo notification
-			<!-- function demo(){ -->
-				<!-- navigator.notification.alert( -->
-						<!-- // message -->
-				    <!-- 'The following will be a demo of the app. Any data collected through the demo will not count towards the challenge.', -->
+			<!-- //Demo notification -->
+			function demo(){
+				navigator.notification.alert(
+						// message
+				    'The following will be a demo of the app. Any data collected through the demo will not count towards the challenge.',
 
-						<!-- // callback -->
-						<!-- function alertDismissed() { -->
-								<!-- window.location.href = "home.html"; -->
-						<!-- }, -->
+						// callback
+						function alertDismissed() {
+								window.location.href = "home.html";
+						},
 
-						<!-- // title -->
-				    <!-- 'Demo!', -->
+						// title
+				    'Demo!',
 
-						<!-- // button label -->
-				    <!-- 'Got it' -->
-				<!-- ); -->
-			<!-- } -->
+						// button label
+				    'Got it'
+				);
+			}
 		</script>
 	</body>
 </html>
