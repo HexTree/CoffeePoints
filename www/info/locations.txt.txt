@@ -1,0 +1,7 @@
+22.30885, 39.10410, cup, Coffee machine and hot water dispenser
+22.30938, 39.10350, cup, Tim Hortons
+22.31071, 39.10248, cup, Coffee Republic
+22.31002, 39.10467, cup, Coffee Bean
+22.30750, 39.10528, cup, Sandwich Gallery
+22.30713, 39.10556, cup, House of Donuts
+22.31139, 39.10195, cup, Coffee Bean

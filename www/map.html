@@ -29,17 +29,75 @@
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	}).addTo(mymap);
 	
-	var iconwidth = 20;
+	var iconwidth = 25;
 	
-	var mugIcon = L.icon({
-		iconUrl: 'img/icons/bag.svg',
+	var cupIcon = L.icon({
+		iconUrl: 'img/icons/cup-png.png',
 		
 		iconSize:     [iconwidth, iconwidth], // size of the icon
 		iconAnchor:   [iconwidth/2, iconwidth/2], // point of the icon which will correspond to marker's location
 		popupAnchor:  [0, -iconwidth] // point from which the popup should open relative to the iconAnchor
 	});
 	
-	L.marker([22.30821, 39.10495], {icon: mugIcon}).bindPopup("Joffrey's").addTo(mymap);
+	var bagIcon = L.icon({
+		iconUrl: 'img/icons/bag-png.png',
+		
+		iconSize:     [iconwidth, iconwidth], // size of the icon
+		iconAnchor:   [iconwidth/2, iconwidth/2], // point of the icon which will correspond to marker's location
+		popupAnchor:  [0, -iconwidth] // point from which the popup should open relative to the iconAnchor
+	});
+	
+	var bottleIcon = L.icon({
+		iconUrl: 'img/icons/bottle-png.png',
+		
+		iconSize:     [iconwidth, iconwidth], // size of the icon
+		iconAnchor:   [iconwidth/2, iconwidth/2], // point of the icon which will correspond to marker's location
+		popupAnchor:  [0, -iconwidth] // point from which the popup should open relative to the iconAnchor
+	});
+	
+	var locations = [
+					[22.30885, 39.10410, 'cup', 'Coffee machine and hot water dispenser'],
+					[22.30938, 39.10350, 'cup', 'Tim Hortons'],
+					[22.31071, 39.10248, 'cup', 'Coffee Republic'],
+					[22.31002, 39.10467, 'cup', 'Coffee Bean'],
+					[22.30821, 39.10495, 'cup', 'Joffreys'],
+					[22.30750, 39.10528, 'cup', 'Sandwich Gallery'],
+					[22.30713, 39.10556, 'cup', 'House of Donuts'],
+					[22.31139, 39.10195, 'cup', 'Coffee Bean'],
+					[22.31143, 39.10284, 'bottle', 'Student Centre - refill stations at levels 0 and 2'],
+					[22.30731, 39.10646, 'bottle', 'IT building - level 2'],
+					[22.30905, 39.10333, 'bottle', 'Library - levels 2 and 3'],
+					[22.31640, 39.09182, 'bottle', 'IRC'],
+					[22.31421, 39.10638, 'bottle', 'KMC'],
+					[22.31492, 39.09932, 'bottle', 'Harbour Sports Club'],
+					[22.30895, 39.10423, 'bag', 'Diner'],
+					[22.31161, 39.10163, 'bag', 'Tamimi'],
+					[22.31132, 39.10141, 'bag', 'Discovery square shops'],
+					[22.31482, 39.10472, 'bag', 'Tamimi - cashiers, pharmacy and fruit balance'],
+					[22.30980, 39.10048, 'bag', 'Saadeddin'],
+					[22.31203, 39.09952, 'bag', 'Fruit store'],
+					[22.31464, 39.10604, 'bag', 'KMC pharmacy']
+					];
+	
+	var index;
+	for (index = 0; index < locations.length; ++index)	
+	{
+		var thumbnail;
+		switch(locations[index][2]) 
+		{
+		case 'cup':
+			thumbnail = cupIcon;
+			break;
+		case 'bag':
+			thumbnail = bagIcon;
+			break;
+		case 'bottle':
+			thumbnail = bottleIcon;
+			break;
+		}
+		L.marker([locations[index][0], locations[index][1]], {icon: thumbnail}).bindPopup(locations[index][3]).addTo(mymap);
+	}
+
 </script>
 
 </body>
