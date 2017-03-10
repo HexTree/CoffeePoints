@@ -43,7 +43,7 @@
            for (var i = 0; i < row.length; i++) {
              res = row[i].split('|');
              if(res[0] == id){
-                 if (res[3] == "MUG") {
+                 if (res[2] == "MUG") {
                      var mugs = parseInt(window.localStorage.getItem("mugs"));
                      mugs++;
                      window.localStorage.setItem("mugs", mugs);
@@ -52,7 +52,7 @@
                      points++;
                      window.localStorage.setItem("points", points);
                  }
-                 else if (res[3] == "BOTTLE") {
+                 else if (res[2] == "BOTTLE") {
                      var bottles = parseInt(window.localStorage.getItem("bottles"));
                      bottles++;
                      window.localStorage.setItem("bottles", bottles);
@@ -61,7 +61,7 @@
                      points++;
                      window.localStorage.setItem("points", points);
                  }
-                 else if (res[3] == "BAG") {
+                 else if (res[2] == "BAG") {
                      var bags = parseInt(window.localStorage.getItem("bags"));
                      bags++;
                      window.localStorage.setItem("bags", bags);

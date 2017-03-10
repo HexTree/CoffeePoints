@@ -58,7 +58,7 @@ body {
 .login {
     height: 100%;
     width: 100%;
-	margin: 5px;
+	  margin: 5px;
     align-content: center;
     position: absolute;
 }
@@ -120,11 +120,11 @@ h1 {
     from {
         opacity: 1.0;
     }
-    
+
     50% {
         opacity: 0.4;
     }
-    
+
     to {
         opacity: 1.0;
     }
@@ -134,11 +134,11 @@ h1 {
     from {
         opacity: 1.0;
     }
-    
+
     50% {
         opacity: 0.4;
     }
-    
+
     to {
         opacity: 1.0;
     }
@@ -161,8 +161,9 @@ header {
     height: 40%;
 }
 
-buttonholder {
-    height: 20%;
+.buttonholder {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 footer {
